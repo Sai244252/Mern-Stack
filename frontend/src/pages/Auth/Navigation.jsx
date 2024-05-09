@@ -5,25 +5,34 @@ import {
   AiOutlineUserAdd,
 } from "react-icons/ai";
 import { MdOutlineLocalMovies } from "react-icons/md";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { useLoginMutation } from "../../redux/api/users";
+import { useLogoutMutation } from "../../redux/api/users";
 import { logout } from "../../redux/features/auth/authSlice";
 
 const Navigation = () => {
   const { userInfo } = useSelector((state) => state.auth);
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-
-  const [logoutApiCall] = useLoginMutation();
-
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
   };
 
-  const logoutHandler = () => {};
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const [logoutApiCall] = useLogoutMutation();
+
+  const logoutHandler = async () => {
+    try {
+      await logoutApiCall().unwrap();
+      dispatch(logout());
+      navigate("/login");
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <div className="fixed bottom-10 left-[30rem] transform translate-x-1/2 translate-y-1/2 z-50 bg-[#0f0f0f] border w-[30%] px-[4rem] mb-[2rem] rounded">
@@ -34,20 +43,19 @@ const Navigation = () => {
             to="/"
             className="flex items-center transition-transform transform hover:translate-x-2"
           >
-            <AiOutlineHome className="mr-2 mt-[3rem] text-white" size={26} />
+            <AiOutlineHome className="mr-2 mt-[3rem]" size={26} />
             <span className="hidden nav-item-name mt-[3rem]">Home</span>
           </Link>
+
           <Link
             to="/movies"
             className="flex items-center transition-transform transform hover:translate-x-2 ml-[1rem]"
           >
             <MdOutlineLocalMovies className="mr-2 mt-[3rem]" size={26} />
-            <span className="hidden nav-item-name mt-[3rem]">Shop</span>
+            <span className="hidden nav-item-name mt-[3rem]">SHOP</span>
           </Link>
         </div>
-
-        {/* Section2 */}
-
+        {/* Section 2 */}
         <div className="relative">
           <button
             onClick={toggleDropdown}
@@ -81,8 +89,8 @@ const Navigation = () => {
 
           {dropdownOpen && userInfo && (
             <ul
-              className={`absoulute right-0 mt-2 mr-14 w-[10rem] space-y-2 bg-white text-gray-600 ${
-                !userInfo.isAdmin ? "-top-20" : "-top=24"
+              className={`absolute right-0 mt-2 mr-14 w-[10rem] space-y-2 bg-white text-gray-600 ${
+                !userInfo.isAdmin ? "-top-20" : "-top-24"
               }`}
             >
               {userInfo.isAdmin && (
@@ -110,7 +118,7 @@ const Navigation = () => {
               <li>
                 <button
                   onClick={logoutHandler}
-                  className="block w-full-px-4 py-2 text-left hover:bg-gray-100"
+                  className="block w-full px-4 py-2 text-left hover:bg-gray-100"
                 >
                   Logout
                 </button>
@@ -126,15 +134,17 @@ const Navigation = () => {
                   className="flex items-center mt-5 transition-transform transform hover:translate-x-2 mb-[2rem]"
                 >
                   <AiOutlineLogin className="mr-2 mt-[4px]" size={26} />
-
                   <span className="hidden nav-item-name">LOGIN</span>
                 </Link>
               </li>
 
               <li>
-                <Link className="flex items-center mt-5 transition-transform transform hover:translate-x-2 ml-[1rem] ">
+                <Link
+                  to="/register"
+                  className="flex items-center mt-5 transition-transform transform hover:translate-x-2 ml-[1rem]"
+                >
                   <AiOutlineUserAdd size={26} />
-                  <span className="hidden nav-item-name">Register</span>
+                  <span className="hidden nav-item-name">REGISTER</span>
                 </Link>
               </li>
             </ul>
