@@ -14,6 +14,8 @@ import connectDB from "./config/db.js";
 
 import userRoutes from "./routes/userRoutes.js";
 
+import genreRoutes from "./routes/genreRoutes.js";
+
 //COnfiguration
 
 dotenv.config();
@@ -35,6 +37,8 @@ const PORT = process.env.PORT || 3000;
 
 app.use("/api/v1/users/", userRoutes);
 
+//index -> routes (usage of model) -> controller (does the api requests)
+app.use("/api/v1/genre/", genreRoutes);
 //listen
 
 app.listen(PORT, () => {
