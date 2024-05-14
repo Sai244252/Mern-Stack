@@ -8,162 +8,611 @@
 	},
 	"item": [
 		{
-			"name": "Create user",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"Sai Raj\",\r\n    \"email\": \"SaiRaj@gmail.com\",\r\n    \"password\": \"test\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "Genre",
+			"item": [
+				{
+					"name": "Create Genre",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Mystery\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/genre/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"genre",
+								""
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:3000/api/v1/users",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"v1",
-						"users"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "User Login",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"sairaj@gmail.com\",\r\n    \"password\": \"test\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+				{
+					"name": "Update Genre",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Action\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/genre/663dd8979a98374ef2609ffa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"genre",
+								"663dd8979a98374ef2609ffa"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:3000/api/v1/users/auth",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"v1",
-						"users",
-						"auth"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "logout",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/api/v1/users/logout",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"v1",
-						"users",
-						"logout"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "All Ussers",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/api/v1/users/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"v1",
-						"users",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get Specific User",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/api/v1/users/profile",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"v1",
-						"users",
-						"profile"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Update user",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"sai244@hotmail.com\",\r\n    \"password\": \"test\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+				{
+					"name": "Delete Genre",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/genre/663dd8979a98374ef2609ffa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"genre",
+								"663dd8979a98374ef2609ffa"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:3000/api/v1/users/profile",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"v1",
-						"users",
-						"profile"
-					]
+				{
+					"name": "Get all genres",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/genre/genres",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"genre",
+								"genres"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Specific Genre",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/genre/663ddfcb2bd2bf08bfd7e0fc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"genre",
+								"663ddfcb2bd2bf08bfd7e0fc"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
+		},
+		{
+			"name": "Users Management",
+			"item": [
+				{
+					"name": "Create user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"Sai Raj\",\r\n    \"email\": \"SaiRaj@gmail.com\",\r\n    \"password\": \"test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"james12@gmail.com\",\r\n    \"password\": \"james12s \"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/users/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/users/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Ussers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/users/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Specific User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/users/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update user",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"sai244@hotmail.com\",\r\n    \"password\": \"test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/users/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Movies",
+			"item": [
+				{
+					"name": "Create Movie",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Avatar\",\r\n    \"image\": \"https://images-na.ssl-images-amazon.com/images/M/MV5BMjEyOTYyMzUxNl5BMl5BanBnXkFtZTcwNTg0MTUzNA@@._V1_SX1500_CR0,0,1500,999_AL_.jpg\",\r\n    \"year\": 2009,\r\n    \"genre\": \"663de1813151e1054b103a99\",\r\n    \"detail\": \"A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.\",\r\n    \"cast\": [\r\n        \"Sam Worthington\", \"Zoe Saldana\", \"Sigourney Weaver\", \"Stephen Lang\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/movies/create-movie/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"movies",
+								"create-movie",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all movies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/movies/all-movies/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"movies",
+								"all-movies",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Specific movie",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/movies/specific-movie/66421e379f31005d4bd5b202",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"movies",
+								"specific-movie",
+								"66421e379f31005d4bd5b202"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update movie",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"GodFather\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/movies/update-movie/663e79369cd75724de967017",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"movies",
+								"update-movie",
+								"663e79369cd75724de967017"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Review Movie",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"comment\" : \"Great movie, have to watch\",\r\n    \"rating\" : 7\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/movies/66421f219f31005d4bd5b204/reviews",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"movies",
+								"66421f219f31005d4bd5b204",
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete movie",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/movies/delete-movie/663e79bc16afbef5488acdc3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"movies",
+								"delete-movie",
+								"663e79bc16afbef5488acdc3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Review",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"movieId\" : \"663e799716afbef5488acdc0\",\r\n    \"reviewId\" : \"663f244daa4176170dd4e965\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/movies/delete-comment/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"movies",
+								"delete-comment",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all movies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/movies/new-movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"movies",
+								"new-movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Top Rated Movie",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/movies//top-movies/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"movies",
+								"",
+								"top-movies",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Random movies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/movies/random-movies/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"movies",
+								"random-movies",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Image Upload",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "C:\\Users\\HP\\Downloads\\vlcsnap-2024-05-11-18h40m50s697.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/upload",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
